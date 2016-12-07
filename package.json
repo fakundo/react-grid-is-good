@@ -1,0 +1,48 @@
+{
+  "name": "react-grid-is-good",
+  "version": "1.0.0",
+  "description": "React grid system",
+  "main": "lib/index.js",
+  "scripts": {
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "react",
+    "grid",
+    "system",
+    "layout",
+    "responsive",
+    "fluid",
+    "bootstrap"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fakundo/react-grid-is-good"
+  },
+  "author": "Roman Samoylov (https://github.com/fakundo)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.11.1",
+    "eslint-plugin-react": "^6.8.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "html-webpack-plugin": "^2.24.1",
+    "lodash": "^4.13.1",
+    "nyan-progress-webpack-plugin": "^1.1.4",
+    "react-dom": "^15.2.1",
+    "react-hot-loader": "^1.0.0",
+    "require-directory": "^2.1.1",
+    "rimraf": "^2.5.4",
+    "run-sequence": "^1.2.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "peerDependencies": {
+    "react": "^15.2.1",
+    "react-addons-update": "^15.4.1"
+  }
+}
