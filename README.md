@@ -65,7 +65,7 @@ It's written as CommonJS modules. So you can easily import with node, webpack, b
 
 ### Component properties
 - Grid
-  - `className {string} [className]`
+  - `className {*} [className]`
   - `children {*} [children]`
   - `flex {boolean} [flex=true]`
   - `breakpoint {string} [breakpoint]`
@@ -74,7 +74,7 @@ It's written as CommonJS modules. So you can easily import with node, webpack, b
   - `align {string|object} [align='left'] - examples: 'center', { xs: 'right' }`
   - `valign {string|object} [valign='top'] - examples: 'middle', { xs: 'bottom' }`
 - Span
-  - `className {string} [className]`
+  - `className {*} [className]`
   - `children {*} [children]`
   - `size {number|string|object} [size='100%'] - examples: 6, '1/2', '50%', { 'xs,sm': 6, 'md,lg': 3 }`
   - `pull {number|string|object} [pull=0] - examples: 6, '1/2', '50%', { xs: 3 }`
@@ -84,12 +84,12 @@ It's written as CommonJS modules. So you can easily import with node, webpack, b
   - `align {string|object} [align='left'] - examples: 'center', { xs: 'right' }`
   - `valign {string|object} [valign='top'] - examples: 'middle', { xs: 'bottom' }`
 - Visible
-  - `className {string} [className]`
+  - `className {*} [className]`
   - `children {*} [children]`
   - `breakpoint {string} [breakpoint]` 
   - `... your breakpoints to set visibility`
 - Hidden
-  - `className {string} [className]`
+  - `className {*} [className]`
   - `children {*} [children]`
   - `breakpoint {string} [breakpoint]` 
   - `... your breakpoints to set visibility`
