@@ -65,26 +65,23 @@ var TestComponent = React.createClass({
       },
       {
         children: this.renderContent('span 1b'),
-        size: '1/4',
+        size: '2/4',
         valign: 'middle'
       },
       {
-        children: this.renderContent('span 1c'),
-        size: '2/4'
-      },
-      {
         children: this.renderContent('span 2'),
-        size: '4/4'
+        size: '2/4'
       },
       {
         children: this.renderContent('span 3a pushed'),
         size: '1/4',
-        push: '3/4'
+        break: true,
+        //push: '3/4'
       },
       {
         children: this.renderContent('span 3b pulled'),
         size: '3/4',
-        pull: '1/4'
+        //pull: '1/4'
       },
       {
         children: this.renderContent('span 4a offset'),
@@ -105,6 +102,15 @@ var TestComponent = React.createClass({
         children: this.renderContent('responsive span 5b'),
         size: { 'sm,md,lg': '50%' },
         align: { xs: 'center' }
+      },
+      {
+        children: this.renderContent('span 6'),
+        size: '2/4'
+      },
+      {
+        children: this.renderContent('span 7 break'),
+        break: true,
+        size: '2/4'
       }
     ];
   },
