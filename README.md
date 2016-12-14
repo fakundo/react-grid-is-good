@@ -66,37 +66,37 @@ It's written as CommonJS modules. So you can easily import with node, webpack, b
 ### Component properties
 ####Grid
 
-  - **`className`**` {*} [className]`
-  - **`children`**` {*} [children]`
-  - **`flex`**` {boolean} [flex=true]`
-  - **`breakpoint`**` {string} [breakpoint]`
-  - **`size`**` {number|object} [size=12]` - *e.g.* **`12`** or **`{ xs: 8, md: 12 }`**
-  - **`gutter`**` {number|object} [gutter=20]` - *e.g.* **`20`** or **`{ xs: 20, 'md,lg': 40 }`**
-  - **`align`**` {string|object} [align='left']` - *e.g.* **`'center'`** or **`{ xs: 'right' }`**
-  - **`valign`**` {string|object} [valign='top']` - *e.g.* **`'middle'`** or **`{ xs: 'bottom' }`**
+  - **`className`** `{*} [className]`
+  - **`children`** `{*} [children]`
+  - **`flex`** `{boolean} [flex=true]`
+  - **`breakpoint`** `{string} [breakpoint]`
+  - **`size`** `{number|object} [size=12]` - *e.g.* **`12`** or **`{ xs: 8, md: 12 }`**
+  - **`gutter`** `{number|object} [gutter=20]` - *e.g.* **`20`** or **`{ xs: 20, 'md,lg': 40 }`**
+  - **`align`** `{string|object} [align='left']` - *e.g.* **`'center'`** or **`{ xs: 'right' }`**
+  - **`valign`** `{string|object} [valign='top']` - *e.g.* **`'middle'`** or **`{ xs: 'bottom' }`**
 
 ####Span
 
-  - **`className`**` {*} [className]`
-  - **`children`**` {*} [children]`
-  - **`size`**` {number|string|object} [size='100%']` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ 'xs,sm': 6, 'md,lg': 3 }`**
-  - **`pull`**` {number|string|object} [pull=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
-  - **`push`**` {number|string|object} [push=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
-  - **`offset`**` {number|string|object} [offset=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
-  - **`break`**` {boolean|object} [break=false]` - *e.g.* **`true`** or **`{ xs: false }`**
-  - **`align`**` {string|object} [align='left']` - *e.g.* **`'center'`** or **`{ xs: 'right' }`**
-  - **`valign`**` {string|object} [valign='top']` - *e.g.* **`'middle'`** or **`{ xs: 'bottom' }`**
+  - **`className`** `{*} [className]`
+  - **`children`** `{*} [children]`
+  - **`size`** `{number|string|object} [size='100%']` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ 'xs,sm': 6, 'md,lg': 3 }`**
+  - **`pull`** `{number|string|object} [pull=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
+  - **`push`** `{number|string|object} [push=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
+  - **`offset`** `{number|string|object} [offset=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
+  - **`break`** `{boolean|object} [break=false]` - *e.g.* **`true`** or **`{ xs: false }`**
+  - **`align`** `{string|object} [align='left']` - *e.g.* **`'center'`** or **`{ xs: 'right' }`**
+  - **`valign`** `{string|object} [valign='top']` - *e.g.* **`'middle'`** or **`{ xs: 'bottom' }`**
 
 ####Visible
 
-  - **`className`**` {*} [className]`
-  - **`children`**` {*} [children]`
-  - **`breakpoint`**` {string} [breakpoint]` 
+  - **`className`** `{*} [className]`
+  - **`children`** `{*} [children]`
+  - **`breakpoint`** `{string} [breakpoint]` 
   - ...your breakpoints to set visibility`
 
 ####Hidden
 
-  - **`className`**` {*} [className]`
-  - **`children`**` {*} [children]`
-  - **`breakpoint`**` {string} [breakpoint]` 
+  - **`className`** `{*} [className]`
+  - **`children`** `{*} [children]`
+  - **`breakpoint`** `{string} [breakpoint]` 
   - ...your breakpoints to set visibility`
