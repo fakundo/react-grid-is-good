@@ -1,6 +1,6 @@
 {
   "name": "react-grid-is-good",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React grid system",
   "main": "lib/index.js",
   "scripts": {
@@ -33,7 +33,9 @@
     "html-webpack-plugin": "^2.24.1",
     "lodash": "^4.13.1",
     "nyan-progress-webpack-plugin": "^1.1.4",
-    "react-dom": "^15.2.1",
+    "react": "^15.4.1",
+    "react-addons-update": "^15.4.1",
+    "react-dom": "^15.4.1",
     "react-hot-loader": "^1.0.0",
     "require-directory": "^2.1.1",
     "rimraf": "^2.5.4",
@@ -42,7 +44,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "peerDependencies": {
-    "react": "^15.2.1",
-    "react-addons-update": "^15.4.1"
+    "react": "^0.14.0 || ^15.0.0",
+    "react-addons-update": "^0.14.0 || ^15.0.0"
   }
 }
