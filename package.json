@@ -1,10 +1,11 @@
 {
   "name": "react-grid-is-good",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React grid system",
   "main": "lib/index.js",
   "scripts": {
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "prepublish": "gulp clean && gulp build"
   },
   "keywords": [
     "react",
@@ -25,26 +26,41 @@
   "author": "Roman Samoylov (https://github.com/fakundo)",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.20.0",
     "babel-eslint": "^7.1.1",
-    "eslint": "^3.11.1",
-    "eslint-plugin-react": "^6.8.0",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-function-bind": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^2.24.1",
-    "lodash": "^4.13.1",
     "nyan-progress-webpack-plugin": "^1.1.4",
-    "react": "^15.4.1",
-    "react-addons-update": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-hot-loader": "^1.0.0",
+    "react-dom": "^15.6.0",
     "require-directory": "^2.1.1",
     "rimraf": "^2.5.4",
     "run-sequence": "^1.2.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
-  "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0",
-    "react-addons-update": "^0.14.0 || ^15.0.0"
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "lodash": "^4.0.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.0"
   }
 }

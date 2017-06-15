@@ -1,14 +1,45 @@
 {
+  "extends": "airbnb",
   "parser": "babel-eslint",
+  "ecmaFeatures": {
+    "classes": true,
+    "jsx": true
+  },
+  "globals": {
+    "__DEV__": true,
+    "HTMLElement": true,
+    "window": true,
+    "document": true,
+    "navigator": true
+  },
   "rules": {
-    "strict": 0
+    # We use _ to define private variables and methods in clases
+    "no-underscore-dangle": 0,
+    # This seems to be buggy we don't want eslint to check this
+    "import/no-extraneous-dependencies": 0,
+    # This is a depricated rule. So we turned off it.
+    "react/require-extension": 0,
+    # We can write JSX in anyfile we want.
+    "react/jsx-filename-extension": 0,
+    # We don't like this rule.
+    "arrow-body-style": 0,
+    # We don't like this rule. We write arrow functions only when we needed.
+    "prefer-arrow-callback": 0,
+    # We don't need to write function names always.
+    "func-names": 0,
+    # propTypes can be object
+    "react/forbid-prop-types": [0, { "forbid": [] }],
+    # Comma dangle
+    "comma-dangle": 0,
+    # We use a lot of webpack aliases
+    "import/no-unresolved": 0,
+    # Webpack import js as dafault extension
+    "import/extensions": 0,
+    # Ignore this rule
+    "react/prefer-stateless-function": 0,
+    # Ignore this rule
+    "class-methods-use-this": 0,
+    # Ignore this rule
+    "react/require-default-props": 0,
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "env": {
-    "node": true,
-    "browser": true
-  },
-  "plugins": [
-    "react"
-  ]
 }

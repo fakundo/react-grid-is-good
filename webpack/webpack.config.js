@@ -7,7 +7,6 @@ const devServerPort = 8888;
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:' + devServerPort,
-    'webpack/hot/only-dev-server',
     path.resolve(__dirname, '..', 'examples')
   ],
   devtool: 'eval',
@@ -29,7 +28,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js?$/,
-        loader: 'react-hot',
+        loader: 'babel',
         exclude: /node_modules/
       }
     ]

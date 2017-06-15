@@ -1,4 +1,4 @@
-#React Grid System
+# React Grid System
 
 [![npm](https://img.shields.io/npm/v/react-grid-is-good.svg?maxAge=2592000)](https://www.npmjs.com/package/react-grid-is-good)
 
@@ -9,7 +9,7 @@ npm install react-grid-is-good
 
 ### Features
 - inline styles
-- flex or float
+- flex
 - responsive
 - custom breakpoints with your own names
 - automatically breaks overflowing rows
@@ -25,32 +25,44 @@ class GridComponent extends Component {
     return (
       <div>
         <Grid>
-          <Span size="2/4">span1</Span>
-          <Span size="1/4">span2</Span>
-          <Span size="1/4">span3</Span>
+          <Span size="25%">#1</Span>
+          <Span size="75%">#2</Span>
         </Grid>
-
-        <Grid size={12} flex={false}>
-          <Span size="6">span1</Span>
-          <Span size="6">span2</Span>
+        
+        <Grid align="center">
+          <Span size="1/2">#1</Span>
+          <Span size="1/2">#2</Span>
         </Grid>
-
-        <Grid breakpoint="lg" size={3}>
-          <Span size={{ 'xs,sm': '100%', lg: '1' }} offset={{ lg: '1/3' }}>span1</Span>
-          <Span size={{ 'xs,sm': '3', lg: '1/3' }}>span2</Span>
+        
+        <Grid size="12">
+          <Span size="6">#1</Span>
+          <Span size="6">#2</Span>
+          <Span size="3">#3</Span>
+          <Span size="3">#4</Span>
+          <Span size="6">#5</Span>
         </Grid>
-
-        <Visible breakpoint="sm" xs sm>
-          I am visible when "xs" or "sm"
+        
+        <Grid size="12">
+          <Span size="3">#1</Span>
+          <Span size="3" push="3">#2</Span>
+        </Grid>
+        
+        <Grid size="12">
+          <Span size="3" push="6">#1</Span>
+          <Span size="3">#2</Span>
+        </Grid>
+        
+        <Grid breakpoint="small" size="12">
+          <Span sizeSmall="6">#1</Span>
+          <Span sizeSmall="6">#2</Span>
+        </Grid>
+        
+        <Visible breakpoint="tablet" mobile tablet>
+          I am visible when breakpoint is "tablet" or "mobile"
         </Visible>
 
         <Hidden breakpoint="sm" md lg>
-          I am hidden when "md" or "lg"
-        </Hidden>
-
-        // You have full control on breakpoints
-        <Hidden breakpoint="desktop" tablet mobile>
-          I am hidden when "tablet" or "mobile"
+          I am hidden when breakpoint is "md" or "lg"
         </Hidden>
       </div>
     );
@@ -58,45 +70,37 @@ class GridComponent extends Component {
 }
 ```
 
-### How to use
-Normally Grid, Visible and Hidden components should be wrapped for passing your breakpoint, default properties, e.g.use flex or not. There is no defined breakpoints like 'xs', 'sm'. You get breakpoints by yourself and it does not matter how (using window resize, matchMedia, User Agent on server). 
-
-It's written as CommonJS modules. So you can easily import with node, webpack, browserify, etc.
-
 ### Component properties
-####Grid
+#### Grid
 
-  - **`className`** `{*} [className]`
-  - **`children`** `{*} [children]`
-  - **`flex`** `{boolean} [flex=true]`
   - **`breakpoint`** `{string} [breakpoint]`
-  - **`size`** `{number|object} [size=12]` - *e.g.* **`12`** or **`{ xs: 8, md: 12 }`**
-  - **`gutter`** `{number|object} [gutter=20]` - *e.g.* **`20`** or **`{ xs: 20, 'md,lg': 40 }`**
-  - **`align`** `{string|object} [align='left']` - *e.g.* **`'center'`** or **`{ xs: 'right' }`**
-  - **`valign`** `{string|object} [valign='top']` - *e.g.* **`'middle'`** or **`{ xs: 'bottom' }`**
+  - **`size`** `{string} [size="100%"]`
+  - **`gutter`** `{number} [gutter=0]`
+  - **`align`** `{string} [align='left']`
+  - **`valign`** `{string} [valign='top']`
+  - ...props based on your breakpoint, for example if you pass `breakpoint="desktop"` and `sizeDesktop="12"` then size will be `12`
 
-####Span
+#### Span
 
-  - **`className`** `{*} [className]`
-  - **`children`** `{*} [children]`
-  - **`size`** `{number|string|object} [size='100%']` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ 'xs,sm': 6, 'md,lg': 3 }`**
-  - **`pull`** `{number|string|object} [pull=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
-  - **`push`** `{number|string|object} [push=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
-  - **`offset`** `{number|string|object} [offset=0]` - *e.g.* **`6`** or **`'1/2'`** or **`'50%'`** or **`{ xs: 3 }`**
-  - **`break`** `{boolean|object} [break=false]` - *e.g.* **`true`** or **`{ xs: false }`**
-  - **`align`** `{string|object} [align='left']` - *e.g.* **`'center'`** or **`{ xs: 'right' }`**
-  - **`valign`** `{string|object} [valign='top']` - *e.g.* **`'middle'`** or **`{ xs: 'bottom' }`**
+  - **`size`** `{string} [size='100%']`
+  - **`pull`** `{string} [pull=0]`
+  - **`push`** `{string} [push=0]`
+  - **`offset`** `{string} [offset=0]`
+  - **`break`** `{boolean} [break=false]`
+  - **`align`** `{string} [align='left']`
+  - **`valign`** `{string} [valign='top']`
+  - ...props based on your breakpoint
 
-####Visible
+#### Visible
 
-  - **`className`** `{*} [className]`
-  - **`children`** `{*} [children]`
   - **`breakpoint`** `{string} [breakpoint]` 
   - ...your breakpoints to set visibility`
 
-####Hidden
+#### Hidden
 
-  - **`className`** `{*} [className]`
-  - **`children`** `{*} [children]`
   - **`breakpoint`** `{string} [breakpoint]` 
   - ...your breakpoints to set visibility`
+
+### How to use
+You should wrap all components and pass to them your own "breakpoint" property. 
+This property can be calculated the way you like.

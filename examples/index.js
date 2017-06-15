@@ -1,170 +1,64 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var ReactGridSystem = require('../lib');
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Grid, Span } from '../src';
 
-var TestComponent = React.createClass({
+function WrappedSpan(props) {
+  return (
+    <Span {...props}>
+      <div
+        style={{
+          background: '#FFDB6A',
+          border: '1px solid #FC5763',
+          padding: 10
+        }}
+      >
+        { props.children }
+      </div>
+    </Span>
+  );
+}
 
-  displayName: 'TestComponent',
+class TestComponent extends Component {
 
-  getInitialState() {
-    return {
-      size: this.getSize()
-    };
-  },
-
-  componentDidMount: function() {
-    window.addEventListener('resize', this.handleResize);
-  },
-
-  getSize: function() {
-    var width = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
-    switch (true) {
-      case width < 628: return 'xs';
-      case width < 1024: return 'sm';
-      case width < 1280: return 'md';
-      default: return 'lg';
-    }
-  },
-
-  handleResize: function() {
-    this.setState({
-      size: this.getSize()
-    });
-  },
-
-  renderContent: function(children) {
-    return React.createElement('div', {
-      style: {
-        backgroundColor: 'red',
-        border: '1px solid blue',
-        minHeight: '30px'
-      },
-      children: children
-    });
-  },
-
-  renderMultiline: function(children) {
-    return React.createElement('div', {},
-      children,
-      React.createElement('br'),
-      children,
-      React.createElement('br'),
-      children,
-      React.createElement('br'),
-      children,
-      React.createElement('br'),
-      children
-    );
-  },
-
-  getSpans: function() {
-    return [
-      {
-        children: this.renderContent(this.renderMultiline('span 1a')),
-        size: '1/4'
-      },
-      {
-        children: this.renderContent('span 1b'),
-        size: '2/4',
-        valign: 'middle'
-      },
-      {
-        children: this.renderContent('span 2'),
-        size: '2/4'
-      },
-      {
-        children: this.renderContent('span 3a pushed'),
-        size: '1/4',
-        break: true,
-        //push: '3/4'
-      },
-      {
-        children: this.renderContent('span 3b pulled'),
-        size: '3/4',
-        //pull: '1/4'
-      },
-      {
-        children: this.renderContent('span 4a offset'),
-        size: '2/4',
-        offset: '1/4',
-        break: true
-      },
-      {
-        children: this.renderContent('span 4b'),
-        size: '1/4'
-      },
-      {
-        children: this.renderContent('responsive span 5a'),
-        size: { 'sm,md,lg': '50%' },
-        align: { xs: 'center' }
-      },
-      {
-        children: this.renderContent('responsive span 5b'),
-        size: { 'sm,md,lg': '50%' },
-        align: { xs: 'center' }
-      },
-      {
-        children: this.renderContent('span 6'),
-        size: '2/4'
-      },
-      {
-        children: this.renderContent('span 7 break'),
-        break: true,
-        size: '2/4'
-      }
-    ];
-  },
-
-  renderFloatGrid: function() {
-    return React.createElement(
-      ReactGridSystem.Grid,
-      { flex: false, breakpoint: this.state.size },
-      this.getSpans().map(function(spanProps, index) {
-        spanProps.key = index;
-        return React.createElement(ReactGridSystem.Span, spanProps);
-      })
-    );
-  },
-
-  renderFlexGrid: function() {
-    return React.createElement(
-      ReactGridSystem.Grid,
-      { flex: true, breakpoint: this.state.size, gutter: { xs: 50 } },
-      this.getSpans().map(function(spanProps, index) {
-        spanProps.key = index;
-        return React.createElement(ReactGridSystem.Span, spanProps);
-      })
-    );
-  },
-
-  renderVisible: function() {
-    return React.createElement(ReactGridSystem.Visible, {
-      breakpoint: this.state.size,
-      xs: true,
-      sm: true
-    }, 'Visible when "xs" or "sm" only');
-  },
-
-  renderHidden: function() {
-    return React.createElement(ReactGridSystem.Hidden, {
-      breakpoint: this.state.size,
-      md: true,
-      lg: true
-    }, 'Hidden when "md" or "lg" only');
-  },
-
-  render: function() {
-    return React.createElement('div', {},
-      this.renderFloatGrid(),
-      React.createElement('hr'),
-      this.renderFlexGrid(),
-      React.createElement('hr'),
-      this.renderVisible(),
-      React.createElement('hr'),
-      this.renderHidden()
+  render() {
+    return (
+      <div>
+        <Grid>
+          <WrappedSpan size="25%">#1</WrappedSpan>
+          <WrappedSpan size="75%">#2</WrappedSpan>
+        </Grid>
+        <hr />
+        <Grid align="center">
+          <WrappedSpan size="1/2">#1</WrappedSpan>
+          <WrappedSpan size="1/2">#2</WrappedSpan>
+        </Grid>
+        <hr />
+        <Grid size="12">
+          <WrappedSpan size="6">#1</WrappedSpan>
+          <WrappedSpan size="6">#2</WrappedSpan>
+          <WrappedSpan size="3">#3</WrappedSpan>
+          <WrappedSpan size="3">#4</WrappedSpan>
+          <WrappedSpan size="6">#5</WrappedSpan>
+        </Grid>
+        <hr />
+        <Grid size="12">
+          <WrappedSpan size="3">#1</WrappedSpan>
+          <WrappedSpan size="3" push="3">#2</WrappedSpan>
+        </Grid>
+        <hr />
+        <Grid size="12">
+          <WrappedSpan size="3" push="6">#1</WrappedSpan>
+          <WrappedSpan size="3">#2</WrappedSpan>
+        </Grid>
+        <hr />
+        <Grid breakpoint="small" size="12">
+          <WrappedSpan sizeSmall="6">#1</WrappedSpan>
+          <WrappedSpan sizeSmall="6">#2</WrappedSpan>
+        </Grid>
+      </div>
     );
   }
 
-});
+}
 
-ReactDOM.render(React.createElement(TestComponent), document.querySelector('#app'));
+ReactDOM.render(<TestComponent />, document.querySelector('#app'));
