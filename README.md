@@ -74,7 +74,7 @@ class GridComponent extends Component {
 #### Grid
 
   - **`breakpoint`** `{string} [breakpoint]`
-  - **`size`** `{string} [size="100%"]`
+  - **`size`** `{number} [size=12]`
   - **`gutter`** `{number} [gutter=0]`
   - **`align`** `{string} [align='left']`
   - **`valign`** `{string} [valign='top']`

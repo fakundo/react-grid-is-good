@@ -10,14 +10,14 @@ export default class Grid extends Component {
     className: PropTypes.any,
     children: PropTypes.any,
     breakpoint: PropTypes.string,
-    size: PropTypes.any,
+    size: PropTypes.number,
     gutter: PropTypes.number,
     align: PropTypes.oneOf(['left', 'center', 'right']),
     valign: PropTypes.oneOf(['top', 'middle', 'bottom']),
   };
 
   static defaultProps = {
-    size: '100%',
+    size: 12,
     gutter: 0,
     align: 'left',
     valign: 'top'

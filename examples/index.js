@@ -43,7 +43,7 @@ class TestComponent extends Component {
         <hr />
         <Grid size="12">
           <WrappedSpan size="3">#1</WrappedSpan>
-          <WrappedSpan size="3" push="3">#2</WrappedSpan>
+          <WrappedSpan size="3" push="6">#2</WrappedSpan>
         </Grid>
         <hr />
         <Grid size="12">
@@ -54,6 +54,12 @@ class TestComponent extends Component {
         <Grid breakpoint="small" size="12">
           <WrappedSpan sizeSmall="6">#1</WrappedSpan>
           <WrappedSpan sizeSmall="6">#2</WrappedSpan>
+        </Grid>
+        <hr />
+        <Grid>
+          <WrappedSpan size="1/2">#1</WrappedSpan>
+          <WrappedSpan size="1/2">#2</WrappedSpan>
+          <WrappedSpan size="1/2" push="1/4">#3</WrappedSpan>
         </Grid>
       </div>
     );
