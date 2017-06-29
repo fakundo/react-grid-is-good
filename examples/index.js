@@ -33,7 +33,7 @@ class TestComponent extends Component {
           <WrappedSpan size="1/2">#2</WrappedSpan>
         </Grid>
         <hr />
-        <Grid size="12">
+        <Grid size={12}>
           <WrappedSpan size="6">#1</WrappedSpan>
           <WrappedSpan size="6">#2</WrappedSpan>
           <WrappedSpan size="3">#3</WrappedSpan>
@@ -41,17 +41,17 @@ class TestComponent extends Component {
           <WrappedSpan size="6">#5</WrappedSpan>
         </Grid>
         <hr />
-        <Grid size="12">
+        <Grid size={12}>
           <WrappedSpan size="3">#1</WrappedSpan>
           <WrappedSpan size="3" push="6">#2</WrappedSpan>
         </Grid>
         <hr />
-        <Grid size="12">
+        <Grid size={12}>
           <WrappedSpan size="3" push="6">#1</WrappedSpan>
           <WrappedSpan size="3">#2</WrappedSpan>
         </Grid>
         <hr />
-        <Grid breakpoint="small" size="12">
+        <Grid breakpoint="small" size={12}>
           <WrappedSpan sizeSmall="6">#1</WrappedSpan>
           <WrappedSpan sizeSmall="6">#2</WrappedSpan>
         </Grid>
