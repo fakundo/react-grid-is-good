@@ -95,15 +95,17 @@ export default class Grid extends Component {
     const nextChildren = [];
     let widthCounter = 0;
     Children.forEach(this.props.children, (child, index) => {
-      const spanBreak = this.getSpanBreak(child.props);
-      let spanWidth = this.getSpanWidth(child.props, gridSize);
-      spanWidth = parseInt(spanWidth, 10);
-      widthCounter += spanWidth;
-      if (widthCounter > 100 || spanBreak) {
-        widthCounter = spanWidth;
-        nextChildren.push(React.createElement(Break, { key: `break${index}` }));
+      if (child) {
+        const spanBreak = this.getSpanBreak(child.props);
+        let spanWidth = this.getSpanWidth(child.props, gridSize);
+        spanWidth = parseInt(spanWidth, 10);
+        widthCounter += spanWidth;
+        if (widthCounter > 100 || spanBreak) {
+          widthCounter = spanWidth;
+          nextChildren.push(React.createElement(Break, { key: `break${index}` }));
+        }
+        nextChildren.push(child);
       }
-      nextChildren.push(child);
     });
     return nextChildren;
   }
