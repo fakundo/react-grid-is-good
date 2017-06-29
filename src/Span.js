@@ -17,7 +17,7 @@ export default class Span extends Component {
   };
 
   static defaultProps = {
-    size: '100%',
+    size: 1,
     pull: 0,
     push: 0,
     offset: 0,

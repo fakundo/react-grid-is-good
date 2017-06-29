@@ -82,7 +82,7 @@ class GridComponent extends Component {
 
 #### Span
 
-  - **`size`** `{string} [size='100%']`
+  - **`size`** `{string} [size=1]`
   - **`pull`** `{string} [pull=0]`
   - **`push`** `{string} [push=0]`
   - **`offset`** `{string} [offset=0]`
