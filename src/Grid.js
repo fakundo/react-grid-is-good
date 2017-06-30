@@ -1,8 +1,10 @@
 import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';
 import uniqueId from 'lodash/uniqueId';
+import assign from 'lodash/assign';
 import { getPropValue, applyPrefixes, calcSize } from './utils';
 import Break from './Break';
+import Span from './Span';
 
 export default class Grid extends Component {
 
@@ -96,9 +98,9 @@ export default class Grid extends Component {
     let widthCounter = 0;
     Children.forEach(this.props.children, (child, index) => {
       if (child) {
-        const spanBreak = this.getSpanBreak(child.props);
-        let spanWidth = this.getSpanWidth(child.props, gridSize);
-        spanWidth = parseInt(spanWidth, 10);
+        const spanProps = assign({}, Span.defaultProps, child.props);
+        const spanBreak = this.getSpanBreak(spanProps);
+        const spanWidth = this.getSpanWidth(spanProps, gridSize);
         widthCounter += spanWidth;
         if (widthCounter > 100 || spanBreak) {
           widthCounter = spanWidth;

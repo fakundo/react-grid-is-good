@@ -23,9 +23,10 @@ class TestComponent extends Component {
   render() {
     return (
       <div>
-        <Grid>
-          <WrappedSpan size="25%">#1</WrappedSpan>
-          <WrappedSpan size="75%">#2</WrappedSpan>
+        <Grid size={3}>
+          <WrappedSpan>#1</WrappedSpan>
+          <WrappedSpan>#2</WrappedSpan>
+          <WrappedSpan>#3</WrappedSpan>
         </Grid>
         <hr />
         <Grid align="center">

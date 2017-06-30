@@ -1,6 +1,6 @@
 {
   "name": "react-grid-is-good",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "React grid system",
   "main": "lib/index.js",
   "scripts": {

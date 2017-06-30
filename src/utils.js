@@ -23,11 +23,11 @@ export const calcSize = (spanSize, gridSize) => {
   // Test fractions
   if (/^[0-9]+?\/[0-9]+$/.test(spanSize)) {
     const sizeSplit = spanSize.split('/');
-    return `${Math.round((parseInt(sizeSplit[0], 10) / parseInt(sizeSplit[1], 10)) * 100)}%`;
+    return `${(parseFloat(sizeSplit[0]) / parseFloat(sizeSplit[1])) * 100}%`;
   }
   // Test single number
   if (/^[0-9]+$/.test(spanSize)) {
-    return `${Math.round((parseInt(spanSize, 10) / gridSize) * 100)}%`;
+    return `${(parseFloat(spanSize) / gridSize) * 100}%`;
   }
   return '0%';
 };
